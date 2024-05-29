@@ -1,0 +1,28 @@
+.article__form { 
+    width: 100%;
+
+    input, textarea {
+        @include border-radius(0px);
+        border-top: none;
+        border-right: none;
+        border-left: none;
+    }
+
+    label {
+        color: gray;
+    }
+}
+
+.submit button {
+    @include padding(.75rem 2.5rem);
+    @include border-radius(15px);
+    color: map-get($map: $backgrounds, $key: "blue");
+    font-weight: map-get($map: $font-styles, $key: "600");
+    border: 2px solid #0040ff;
+    width: 100%;
+    transition:.3s;
+
+    &:hover {
+        @include colors(map-get($map: $colors, $key: "white"),map-get($map: $backgrounds, $key: "blue"));
+    }
+}

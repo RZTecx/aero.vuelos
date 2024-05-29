@@ -1,0 +1,354 @@
+.article {
+    @include border-radius(100px);
+    line-height: 20px;
+    gap: 36px;
+
+    &__body {
+        @include padding(25px 0px 115px 105px);
+
+        @include xs {
+            // @include padding(25px 0px 100px 50px);
+            padding: 25px 0px 100px 50px !important;
+        }
+    }
+
+    &__number {
+        @include margin(-85px 0px 0px 0px); 
+    }
+
+    &__number, &__upper-text {
+        @include font-styles(map-get($map: $font-styles, $key: "text"), map-get($map: $font-styles, $key: "600"), 30.8px, 600);
+    }
+
+    &__title {
+        @include margin(20px 0px 30px 0px);
+        @include font-styles(map-get($map: $font-styles, $key: "title"), 600, 70px, -2.1px);
+    }
+
+    &__description {
+        @include font-styles(20px, 500, 28px, -0.2px);
+    }
+}
+
+.article__first {
+    @include colors(map-get($map: $colors, $key: "white"), map-get($map: $backgrounds, $key: "blue"));
+
+    .article__upper-text {
+        color: #75BDFF;
+    }
+
+    .article__description {
+        color: map-get($map: $colors, $key: "white");
+    }
+
+    .article__link a {
+        @include colors(map-get($map: $backgrounds, $key: "blue"), map-get($map: $backgrounds, $key: "white"));
+        @include padding(22px 30px 22px 30px);
+        @include border-radius(16px);
+        font-weight: map-get($map: $font-styles, $key: "600");
+    }
+
+    // Media Queries
+    @media (max-width: 1199px) {
+        @include background-image(url(../assets/img/bautismos-bg.webp), no-repeat, top right);
+    }
+
+    @media (min-width: 992px) {
+        & {
+            @include padding(147px 0px 115px 127px);
+        }
+    }
+
+    @media (max-width: 991px) {
+        .article__body {
+            @include padding(90px 0px 127px 90px);
+        }
+        .article__number {
+            margin-top: 59px !important;
+            position: absolute;
+        }
+        .article__upper-text {
+            margin-top: 120px;
+        }
+    }
+
+    @media (min-width: 576px) { 
+        .article__link {
+            @include padding(0px 0px 0px 105px);
+        }
+    }
+
+    @include sm {
+        .article__title {
+            font-size: 55px;
+        }
+    }
+
+    @include xs {
+        .article__body {
+            // @include padding(110px 0px 100px 50px);
+            padding: 110px 0px 100px 50px !important; 
+        }
+        .article__title {
+            font-size: 10.7vw;
+        }
+        .article__upper-text {
+            font-size: 5vw;
+        }
+        .article__description {
+            font-size: 4.6vw;
+        }
+    }
+
+    @media (min-width: 400px) {
+        .mdq-br {
+            display: none;
+        }
+    }
+
+    @media (max-width: 399px) {
+        .home & .article__title {
+            font-size: 16vw !important;
+        }
+    }
+}
+
+// Small Articles
+
+.small-articles {
+    .article {
+        @include padding(147px 0px 0px);
+
+        &__upper-text {
+            @include margin(120px 0px 0px 0px);
+        }
+
+        &__title {
+            font-size: 60px;
+        }
+    }
+
+    // Media Queries
+    @include xl {
+        .article__title {
+            font-size: 53px;
+        }
+    }
+
+    @include lg {
+        .article__title {
+            font-size: 41px;
+        }
+        .article__title, .article__description {
+            padding-right: 50px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .article {
+            @include margin(0px 10px);
+            width: 40.8%;
+        }
+    }
+
+    @include md {
+        .article__body {
+            @include padding(90px 0px 127px 90px);
+        }
+    }
+
+    @include sm {
+        .article__body {
+            @include padding(25px 0px 115px 105px);
+        }
+        .article__title {
+            font-size: 60px;
+        }
+    }
+
+    @include xs {
+        .article-body {
+            @include padding(25px 0px 100px 50px);
+        }
+        .article__upper-text {
+            font-size: 20px;
+        }
+        .article__title {
+            font-size: 7.5vw !important;
+        }
+        .article__description {
+            font-size: 5vw !important;
+        }
+    }
+
+    @media (max-width: 399px) {
+        .article__title {
+            font-size: 12vw !important;
+        }
+    }
+}
+
+// Second Article
+
+.article__second {
+    background-color: map-get($map: $backgrounds, $key: "black");
+    @include background-image(url(../assets/img/airplane-bg.webp), no-repeat, top right);
+    
+    .article__number {
+        color: map-get($map: $colors, $key: "gray");
+    }
+    
+    .article__upper-text {
+        color: map-get($map: $colors, $key: "blue");
+    }
+
+    .article__title {
+        color: map-get($map: $colors, $key: "white");
+    }
+
+    // Media Queries
+    @include md {
+        .article__title {
+            font-size: 50px;
+        }
+    }
+
+    @include sm {
+        .article__description {
+            background: linear-gradient(93deg, #14EDE0 27.16%, #006eff 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .article__piloto--br {
+            display: none;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .article__description {
+            background: linear-gradient(93deg, #14EDE0 27.16%, #006eff 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .article__piloto--br {
+            display: none;
+        }
+    }
+
+    @include xs {
+        .article__title {
+            font-size: 40px;
+        }
+        .article__description {
+            color: map-get($map: $colors, $key: "blue");
+            font-size: 18px;
+        }
+    }
+}
+
+// Third Article
+    
+.article__third {
+    @include colors(map-get($map: $colors, $key: "black"), map-get($map: $backgrounds, $key: "aqua"));
+    @include background-image(url(../assets/img/clouds-bg.webp), no-repeat, top right);
+
+    .article__description {
+        color: map-get($map: $colors, $key: "black");
+    }
+
+    // Media Queries
+    @include md {
+        .article__title {
+            font-size: 55px;
+        }
+    }
+
+    @include xs {
+        .article__title {
+            font-size: 43.5px;
+        }
+    }
+}
+
+// Fourth Article
+
+.article__fourth {
+    background-color: map-get($map: $backgrounds, $key: "black");
+    @include padding(147px 0px 115px 127px);
+    
+    .article__number {
+        color: map-get($map: $colors, $key: "gray");
+    }
+
+    .article__title {
+        color: map-get($map: $colors, $key: "white");
+    }
+
+    .article__title span:first-child {
+        background: linear-gradient(93deg, #14EDE0 33.16%, #0057FF 63.53%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .article__call-to-action h2 {
+        color: map-get($map: $colors, $key: "white");
+        @include font-styles(map-get($map: $font-styles, $key: "title"), map-get($map: $font-styles, $key: "600"), default, default);
+    }
+
+    .article__disclaimer {
+        color: map-get($map: $colors, $key: "gray");
+        @include font-styles(default, default, 22.4px, -0.16px);
+    }
+
+    @include md {
+        .article__title {
+            font-size: 60px;
+        }
+    }
+
+    @include sm {
+        .article__title {
+            font-size: 45px;
+            line-height: 60px;
+        }
+        .article__call-to-action h2 {
+            font-size: 55px;
+        }
+    }
+
+    @include xs {
+        .article__title {
+            font-size: 8vw;
+            line-height: 40px;
+        }
+        .article__main-image {
+            margin-top: -30px;
+        }
+        .article__call-to-action h2 {
+            font-size: 9vw;
+        }
+        .article__disclaimer {
+            font-size: 3.5vw;
+        }
+    }
+}
+
+// Fifth Article
+
+.article__fifth {
+    @include padding (147px 0px 0px 0px);
+    @include colors(map-get($map: $backgrounds, $key: "black"), map-get($map: $colors, $key: "white"));
+}
+
+.home .article__fifth {
+    @include background-image(url(../assets/img/contacto-bg.webp), no-repeat, top right);
+
+    .article__body {
+        @include padding(25px 100px 115px 100px);
+
+        @include xs {
+            // @include padding(25px 50px 100px 50px); 
+            padding: 25px 50px 100px 50px !important;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.reservas-navbar-btn, .hero-section__btn, .article__btn--empeza {
+    @include colors(map-get($map: $colors, $key: "white"), map-get($map: $backgrounds, $key: "blue"));
+    @include font-styles(default, map-get($map: $font-styles, $key: "600"), 20px, default);
+    @include border-radius(16px);
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.reservas-navbar-btn {
+    @include padding(17px 35px);
+    font-size: 20px;
+    display: flex;
+}
+
+.hero-section__btn {
+    @include padding(22px 30px);
+
+    &-reservas {
+        @include colors(map-get($map: $colors, $key: "black"), map-get($map: $backgrounds, $key: "white"));
+    }
+}
+
+.article__btn--empeza {
+    @include padding(26px 34px);
+}
+
+// Media Queries
+
+@include xl {
+    .reservas-navbar-btn {
+        margin-right: -25px;
+    }
+}
+
+@include lg {
+    .reservas-navbar-btn {
+        margin-right: -30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero-section__btn {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .hero-section__btn {
+        margin-left: 9.5%;
+        width: 80%;
+    }
+    .submit button {
+        @include colors(map-get($map: $colors, $key: "white"), map-get($map: $backgrounds, $key: "blue"));
+        border: none;
+    }
+}

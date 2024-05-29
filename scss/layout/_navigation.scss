@@ -1,0 +1,28 @@
+.nav-link {
+    @include font-styles(16px, 500, 24px, -0.16px);
+    color:#101112 !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+// Media Queries
+
+@include xxl {
+    .inicio-margin {
+        margin-left: 73px;
+    }
+}
+
+@include xl {
+    .inicio-margin {
+        margin-left: 89px;
+    }
+}
+
+@include lg {
+    .inicio-margin {
+        margin-left: 67px;
+    }
+}

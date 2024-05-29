@@ -1,0 +1,83 @@
+.hero-section__title {
+    color: map-get($map: $colors, $key: "black");
+    font-size: 120px;
+    font-weight:700;
+    grid-area:auto;
+    letter-spacing:-7.2px;
+}
+
+.hero-section__text, .hero-section__description {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30.8px;
+}
+
+// Media Queries
+
+@include xl {
+    .hero-section__title {
+        font-size: 105px;
+    }
+}
+
+@include lg {
+    .hero-section__title {
+        font-size: 92px;
+    }
+}
+
+// PENDIENTE
+
+@media (min-width: 992px) {
+    .hero-section__text {
+        margin-top: 105px;
+    }
+}
+
+@include md {
+    .hero-section__title {
+        font-size: 84px;
+    }
+    .hero-section__description {
+        font-size: 21.5px;
+    }
+}
+
+// PENDIENTE 
+
+@media screen and (min-width: 768px) {
+    .hero-section__title {
+        line-height: 144px;
+    }
+    .hero-section__description {
+        margin-bottom: 65px;
+    }
+}
+
+@include sm {
+    .hero-section {
+        margin-top: 30px !important;
+    }
+    .hero-section__title {
+        font-size: 60px;
+        letter-spacing: -5px;
+    }
+}
+
+@include xs {
+    .hero-section {
+        margin-top: 40px !important;
+    }
+    .hero-section__title {
+        font-size: 10vw;
+        margin-top: -13px;
+        letter-spacing: -3px;
+    }
+    .hero-section__description {
+        font-size: 4vw;
+    }
+    .hero-section__btn {
+        margin-left: 9.5%;
+        width: 80%;
+    }
+}
